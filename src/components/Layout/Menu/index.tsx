@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Menu } from 'antd'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import menus, { IFMenu, IFMenuBase } from '@/router/config'
 import { PieChartOutlined } from '@ant-design/icons'
 const { Item, SubMenu } = Menu
@@ -8,7 +8,7 @@ const { Item, SubMenu } = Menu
 const iconMap: any = {
   PieChartOutlined: <PieChartOutlined />,
 }
-
+// 生成菜单
 const generateMenus = (menus: IFMenuBase[]) => {
   return menus.map((item: IFMenu) => {
     if (item.subs && item.subs?.length) {
@@ -41,8 +41,57 @@ const generateMenus = (menus: IFMenuBase[]) => {
     )
   })
 }
-const SiderMenu = (): any => {
-  return <Menu mode="inline" theme="dark">{generateMenus(menus.menus)}</Menu>
+
+const SiderMenu = (props: any): any => {
+  const [openKeys, setOpenKeys] = useState<any>([])
+  const [selectedKey, setSelectedKey] = useState('')
+
+  const getOpenAndSelectKeys = (props: any) => {
+    const { location } = props
+    const { pathname } = location
+    return {
+      openKeys: recombineOpenKeys(pathname.match(/[/](\w+)/gi) || []),
+      selectedKey: pathname,
+    }
+  }
+
+  const recombineOpenKeys = (openKeys: string[]) => {
+    let i = 0
+    let strPlus = ''
+    const tempKeys: string[] = []
+    while (i < openKeys.length) {
+      strPlus += openKeys[i]
+      tempKeys.push(strPlus)
+      i++
+    }
+    return tempKeys
+  }
+
+  const menuClick = (e: any) => {
+    setSelectedKey(e.key)
+  }
+  const openMenu: any = (v: string[]) => {
+    setOpenKeys(v)
+  }
+
+  useEffect(() => {
+    const { openKeys, selectedKey } = getOpenAndSelectKeys(props)
+    setOpenKeys(openKeys)
+    setSelectedKey(selectedKey)
+  }, [props.location.pathname])
+
+  return (
+    <Menu
+      mode="inline"
+      theme="dark"
+      openKeys={openKeys}
+      onOpenChange={openMenu}
+      selectedKeys={[selectedKey]}
+      onClick={menuClick}
+    >
+      {generateMenus(menus.menus)}
+    </Menu>
+  )
 }
 
-export default SiderMenu
+export default withRouter(SiderMenu)
