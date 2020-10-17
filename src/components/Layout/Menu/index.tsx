@@ -42,7 +42,7 @@ const generateMenus = (menus: IFMenuBase[]) => {
   })
 }
 const SiderMenu = (): any => {
-  return <Menu mode="inline">{generateMenus(menus.menus)}</Menu>
+  return <Menu mode="inline" theme="dark">{generateMenus(menus.menus)}</Menu>
 }
 
 export default SiderMenu
