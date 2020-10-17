@@ -1,15 +1,15 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { ConfigProvider } from 'antd'
-import { Provider } from 'react-redux'
+import { StoreContext } from 'redux-react-hook'
 import zhCN from 'antd/es/locale/zh_CN'
 import moment from 'moment'
 import 'moment/locale/zh-cn'
 moment.locale('zh-cn')
-
 import Page from './Page'
 import store from '@/store'
-
+import http from '@/utils/service/http'
+window.http = http
 const Root: React.FC = () => {
   const getPopupContainer = (node: { parentNode: any }) => {
     if (node) {
@@ -19,9 +19,9 @@ const Root: React.FC = () => {
   }
   return (
     <ConfigProvider getPopupContainer={getPopupContainer} locale={zhCN}>
-      <Provider store={store}>
+      <StoreContext.Provider value={store}>
         <Page />
-      </Provider>
+      </StoreContext.Provider>
     </ConfigProvider>
   )
 }

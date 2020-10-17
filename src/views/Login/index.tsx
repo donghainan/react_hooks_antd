@@ -1,11 +1,35 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Button } from 'antd'
-const Login = (): any => {
+import { login } from '@/store/actions/login'
+
+import { useDispatch, useMappedState } from 'redux-react-hook'
+
+const UserLogin = (): any => {
+  const dispatch = useDispatch()
+  const mapState = useCallback(
+    (state) => ({
+      token: state.login.token,
+    }),
+    []
+  )
+
+  const { token } = useMappedState(mapState)
+
+  const loginByPwd = () => {
+    login(dispatch, {
+      clientType: 1,
+      loginName: 'jianan886',
+      password: '123',
+    })
+  }
+
   return (
     <div>
-      <Button type="primary">登录</Button>
+      {token.token}
+      <Button type="primary" onClick={loginByPwd}>
+        登录
+      </Button>
     </div>
   )
 }
-
-export default Login
+export default UserLogin

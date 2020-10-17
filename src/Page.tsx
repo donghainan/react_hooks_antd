@@ -1,7 +1,13 @@
 import React from 'react'
 import App from './App'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import {AsyncComponent} from '@/components'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom'
+import { AsyncComponent } from '@/components'
+
 const Page = (): any => {
   return (
     <Router>
@@ -12,8 +18,8 @@ const Page = (): any => {
           render={() => <Redirect to="/tms/dashboard" push />}
         />
         <Route path="/tms" component={App} />
-        <Route exact path="/404" component={AsyncComponent('views/NotFound')} />
-        <Route exact path="/login" component={AsyncComponent('views/Login')} />
+        <Route path="/login" component={AsyncComponent('views/Login')} />
+        <Route path="/404" component={AsyncComponent('views/NotFound')} />
         <Route component={AsyncComponent('views/NotFound')} />
       </Switch>
     </Router>

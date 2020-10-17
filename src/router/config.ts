@@ -30,20 +30,6 @@ const menus: {
       icon: 'PieChartOutlined',
       component: 'views/Dashboard',
     },
-    {
-      key: '/tms/notfound',
-      title: '404',
-      icon: 'PieChartOutlined',
-      component: 'views/NotFound',
-      subs: [
-        {
-          key: '/tms/login',
-          title: '登录页',
-          icon: 'PieChartOutlined',
-          component: 'views/Login',
-        },
-      ],
-    },
   ],
 }
 export default menus
