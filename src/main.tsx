@@ -3,9 +3,10 @@ import { render } from 'react-dom'
 import { ConfigProvider } from 'antd'
 import { StoreContext } from 'redux-react-hook'
 import zhCN from 'antd/es/locale/zh_CN'
-import moment from 'moment'
-import 'moment/locale/zh-cn'
-moment.locale('zh-cn')
+// import moment from 'moment'
+import dayjs from 'dayjs'
+import 'dayjs/locale/zh-cn'
+dayjs.locale('zh-cn')
 import Page from './Page'
 import store from '@/store'
 import http from '@/utils/service/http'

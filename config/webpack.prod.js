@@ -6,6 +6,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 // cdn 引入
 const WebpackCdnPlugin = require('webpack-cdn-plugin')
+// 打包分析
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 
 module.exports = {
   mode: 'production',
@@ -75,5 +77,8 @@ module.exports = {
         },
       ],
     }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false
+    })
   ],
 }

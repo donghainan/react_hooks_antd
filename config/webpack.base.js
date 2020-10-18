@@ -14,6 +14,9 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 // 颜色输出
 const chalk = require('chalk')
 
+//替换moment库过大问题
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
+
 // env
 const env = process.env.NODE_ENV
 
@@ -117,6 +120,7 @@ const baseConfig = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contentHash:8].css',
     }),
+    new AntdDayjsWebpackPlugin(),
     new ProgressBarPlugin({
       format:
         '  build [:bar] ' +
