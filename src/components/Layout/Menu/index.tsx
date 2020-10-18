@@ -2,11 +2,36 @@ import React, { useState, useEffect } from 'react'
 import { Menu } from 'antd'
 import { Link, withRouter } from 'react-router-dom'
 import menus, { IFMenu, IFMenuBase } from '@/router/config'
-import { PieChartOutlined } from '@ant-design/icons'
+import {
+  HomeOutlined,
+  UnorderedListOutlined,
+  PicLeftOutlined,
+  CheckSquareOutlined,
+  UsergroupAddOutlined,
+  IdcardOutlined,
+  CarOutlined,
+  ContainerOutlined,
+  FormOutlined,
+  SettingOutlined,
+  DeploymentUnitOutlined,
+  DatabaseOutlined,
+} from '@ant-design/icons'
 const { Item, SubMenu } = Menu
 
+// 图标map表
 const iconMap: any = {
-  PieChartOutlined: <PieChartOutlined />,
+  HomeOutlined: <HomeOutlined />,
+  UnorderedListOutlined: <UnorderedListOutlined />,
+  PicLeftOutlined: <PicLeftOutlined />,
+  CheckSquareOutlined: <CheckSquareOutlined />,
+  UsergroupAddOutlined: <UsergroupAddOutlined />,
+  IdcardOutlined: <IdcardOutlined />,
+  CarOutlined: <CarOutlined />,
+  ContainerOutlined: <ContainerOutlined />,
+  SettingOutlined: <SettingOutlined />,
+  FormOutlined: <FormOutlined />,
+  DeploymentUnitOutlined: <DeploymentUnitOutlined />,
+  DatabaseOutlined: <DatabaseOutlined />,
 }
 // 生成菜单
 const generateMenus = (menus: IFMenuBase[]) => {

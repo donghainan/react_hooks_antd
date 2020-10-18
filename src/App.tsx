@@ -17,7 +17,6 @@ const App = (): any => {
         <SiderBar collapsed={collapsed}></SiderBar>
         <Layout className="global-layout-right">
           <Header collapsed={collapsed} toggle={toggle} />
-
           <Content className="global-content">
             <Routes />
           </Content>

@@ -3,3 +3,5 @@ interface Window {
   http: any
 }
 declare let http:any
+declare let AMap:any
+declare let AMapUI:any

@@ -43,6 +43,7 @@ const baseConfig = {
       '@': path.resolve(__dirname, '../src'),
     },
   },
+  externals: {},
   module: {
     rules: [
       {

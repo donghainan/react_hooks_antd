@@ -24,11 +24,72 @@ const menus: {
   [index: string]: any
 } = {
   menus: [
+    // 菜单相关路由
     {
       key: '/tms/dashboard',
       title: '首页',
-      icon: 'PieChartOutlined',
+      icon: 'HomeOutlined',
       component: 'views/Dashboard',
+    },
+    {
+      key: '/tms/order',
+      title: '订单管理',
+      icon: 'UnorderedListOutlined',
+      subs: [],
+    },
+    {
+      key: '/tms/waybill',
+      title: '运单管理',
+      icon: 'PicLeftOutlined',
+      subs: [],
+    },
+    {
+      key: '/tms/examine',
+      title: '审核管理',
+      icon: 'CheckSquareOutlined',
+      subs: [],
+    },
+    {
+      key: '/tms/partner',
+      title: '伙伴管理',
+      icon: 'UsergroupAddOutlined',
+    },
+    {
+      key: '/tms/driver',
+      title: '司机管理',
+      icon: 'IdcardOutlined',
+    },
+    {
+      key: '/tms/vehicle',
+      title: '车辆管理',
+      icon: 'CarOutlined',
+    },
+    {
+      key: '/tms/contract',
+      title: '合同管理',
+      icon: 'ContainerOutlined',
+    },
+    {
+      key: '/tms/settle',
+      title: '结算管理',
+      icon: 'FormOutlined',
+    },
+    {
+      key: '/tms/system',
+      title: '系统管理',
+      icon: 'SettingOutlined',
+      subs: []
+    },
+    {
+      key: '/tms/setting',
+      title: '配置中心',
+      icon: 'DeploymentUnitOutlined',
+      subs: []
+    },
+    {
+      key: '/tms/dataCenter',
+      title: '数据中心',
+      icon: 'DatabaseOutlined',
     },
   ],
 }

@@ -3,7 +3,7 @@ import { Layout, Badge, Avatar, Popover } from 'antd'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  AlertOutlined,
+  BellOutlined,
   UserOutlined,
 } from '@ant-design/icons'
 import classnames from 'classnames'
@@ -41,7 +41,7 @@ const GolbalHeader = (props: IProps): any => {
         }}
       >
         <Badge dot>
-          <AlertOutlined style={{ fontSize: 20 }} />
+          <BellOutlined style={{ fontSize: 20 }} />
         </Badge>
       </a>
       <span>
