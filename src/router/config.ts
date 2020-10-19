@@ -41,6 +41,7 @@ const menus: {
       key: '/tms/waybill',
       title: '运单管理',
       icon: 'PicLeftOutlined',
+      component: 'views/Waybill',
       subs: [],
     },
     {

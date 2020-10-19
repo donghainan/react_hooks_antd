@@ -115,13 +115,7 @@
   }
 }
 
-.ant-table.ant-table-bordered
-  > .ant-table-container
-  > .ant-table-content
-  > table
-  > tbody
-  > tr.oddRow
-  > td {
+.ant-table-container > .ant-table-content > table > tbody > tr.odd > td {
   &:first-child {
     &::before {
       position: absolute;
@@ -134,14 +128,7 @@
     }
   }
 }
-
-.ant-table.ant-table-bordered
-  > .ant-table-container
-  > .ant-table-content
-  > table
-  > tbody
-  > tr.evenRow
-  > td {
+.ant-table-container > .ant-table-content > table > tbody > tr.even > td {
   &:first-child {
     &::before {
       position: absolute;
@@ -164,8 +151,8 @@
   width: 100% !important;
 }
 .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
-	transition: all ease-in 0.3;
-	
+  transition: all ease-in 0.3;
+
   position: relative;
   &::before {
     position: absolute;
@@ -202,6 +189,6 @@
   background-color: #040830 !important;
   a {
     padding-left: 12px;
-	}
-	transition: all ease-in 0.3;
+  }
+  transition: all ease-in 0.3;
 }
