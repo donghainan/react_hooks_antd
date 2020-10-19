@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Breadcrumb } from 'antd'
+
 const { Item } = Breadcrumb
 
 interface Iprops {
@@ -16,7 +18,7 @@ const JBreadcrumb = (props: Iprops): any => {
         {children.map((item: any) => {
           return item.path ? (
             <Item key={item.breadcrumbName}>
-              <a href={item.path}>{item.breadcrumbName}</a>
+              <Link to={item.path}>{item.breadcrumbName}</Link>
             </Item>
           ) : (
             <Item key={item.breadcrumbName}>{item.breadcrumbName}</Item>

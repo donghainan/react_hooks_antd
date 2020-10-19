@@ -31,7 +31,6 @@ const prod = require('./webpack.prod')
 
 // modify vars theme
 const theme = require('../theme')
-
 const baseConfig = {
   entry: { app: path.resolve(__dirname, '../src/main.tsx') },
   output: {
